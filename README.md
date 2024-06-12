@@ -1,5 +1,5 @@
 # Lucas Mod Launcher Lua Definitions
-This repository contains a Lua file of definitions for custom Lua functions build in to [Lucas' Simpsons Hit & Run Mod Launcher](https://modbakery.donutteam.com/releases/view/6).
+This repository contains a Lua file of definitions for custom Lua functions built in to [Lucas' Simpsons Hit & Run Mod Launcher](https://modbakery.donutteam.com/releases/view/6).
 
 ## Usage
 This file is designed for use with the [Lua Language Server](https://luals.github.io/).
