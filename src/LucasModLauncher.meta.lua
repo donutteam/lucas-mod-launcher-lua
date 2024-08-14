@@ -132,11 +132,18 @@ function GetPathParent(path, windows) end
 ---@return boolean | integer | number | string | nil
 function GetSetting(settingName, modInternalName) end
 
----Returns a table of all setting values in the specified mod or the current mod if none is specified.
+---Returns a table of all setting values in the current mod.
 ---
 ---For MultipleChoice settings, the value returned is 1 based.
 ---
----@param modInternalName string | nil
+---@return table<string, boolean | integer | number | string>
+function GetSettings() end
+
+---Returns a table of all setting values in the specified mod or nil if the mod is not loaded.
+---
+---For MultipleChoice settings, the value returned is 1 based.
+---
+---@param modInternalName string
 ---@return table<string, boolean | integer | number | string> | nil
 function GetSettings(modInternalName) end
 
