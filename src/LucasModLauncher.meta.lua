@@ -2,23 +2,23 @@
 
 ---Shows a message box for debugging purposes with an "OK" button.
 ---
----@param message string
-function Alert(message) end
+---@param Message string
+function Alert(Message) end
 
 ---Compares two paths and returns whether they are equal.
 ---
----@param path1 string
----@param path2 string
----@param isCaseInsensitive boolean | nil
----@param isSlashInsensitive boolean | nil
+---@param Path1 string
+---@param Path2 string
+---@param IsCaseInsensitive boolean | nil
+---@param IsSlashInsensitive boolean | nil
 ---@return boolean
-function ComparePaths(path1, path2, isCaseInsensitive, isSlashInsensitive) end
+function ComparePaths(Path1, Path2, IsCaseInsensitive, IsSlashInsensitive) end
 
 ---Shows a message box for debugging purposes with an "OK" button and a "Cancel" button.
 ---
----@param message string
+---@param Message string
 ---@return boolean
-function Confirm(message) end
+function Confirm(Message) end
 
 ---Iterates a directory, calling the provided callback for each entry.
 ---
@@ -26,47 +26,47 @@ function Confirm(message) end
 ---
 ---Note: The order of the entries is not guaranteed.
 ---
----@param path string
----@param callback fun(fileOrDirectory : string, isDirectory : boolean) : boolean
----@param useReverseOrder boolean | nil
-function DirectoryGetEntries(path, callback, useReverseOrder) end
+---@param Path string
+---@param Callback fun(FileOrDirectory: string, IsDirectory: boolean): boolean
+---@param UseReverseOrder boolean | nil
+function DirectoryGetEntries(Path, Callback, UseReverseOrder) end
 
 -- TODO: DirectoryRecursiveCreate
 
 ---Returns whether the specified path exists.
 ---
----@param path string
----@param isFile boolean
----@param isDirectory boolean
+---@param Path string
+---@param IsFile boolean
+---@param IsDirectory boolean
 ---@return boolean
-function Exists(path, isFile, isDirectory) end
+function Exists(Path, IsFile, IsDirectory) end
 
 ---Returns a version of the given path with modified slashes.
 ---
----@param path string
----@param toWindows boolean | nil
----@param fromWindows boolean | nil
+---@param Path string
+---@param ToWindows boolean | nil
+---@param FromWindows boolean | nil
 ---@return string
-function FixSlashes(path, toWindows, fromWindows) end
+function FixSlashes(Path, ToWindows, FromWindows) end
 
 ---Calls the given callback function for each mod that is enabled.
 ---
 ---You can return `false` from the callback to stop the iteration early.
 ---
----@param callback fun(modInternalName : string) : boolean
-function GetEnabledMods(callback) end
+---@param Callback fun(ModInternalName: string): boolean
+function GetEnabledMods(Callback) end
 
 ---Returns the file extension of the specified path.
 ---
----@param path string
+---@param Path string
 ---@return string
-function GetFileExtension(path) end
+function GetFileExtension(Path) end
 
 ---Returns the file name of the specified path including the extension.
 ---
----@param path string
+---@param Path string
 ---@return string
-function GetFileName(path) end
+function GetFileName(Path) end
 
 ---This function returns the current language of the game.
 ---
@@ -90,23 +90,23 @@ function GetModName() end
 
 ---Returns the path to a mod within the Virtual File System.
 ---
----@param modInternalName string | nil
+---@param ModInternalName string | nil
 ---@return string
-function GetModPath(modInternalName) end
+function GetModPath(ModInternalName) end
 
 ---Returns the title of the specified mod or the current mod if none is specified.
 ---
 ---This returns nil if called with the name of a mod that is not enabled.
 ---
----@param modInternalName string | nil
+---@param ModInternalName string | nil
 ---@return string | nil
-function GetModTitle(modInternalName) end
+function GetModTitle(ModInternalName) end
 
 ---Returns the version of the specified mod or the current mod if none is specified.
 ---
----@param modInternalName string | nil
+---@param ModInternalName string | nil
 ---@return string | nil
-function GetModVersion(modInternalName) end
+function GetModVersion(ModInternalName) end
 
 ---Returns the path of the file being requested.
 ---
@@ -119,18 +119,18 @@ function GetPath() end
 ---
 ---This will return the file name if it is only given a file name.
 ---
----@param path string
----@param windows boolean | nil
-function GetPathParent(path, windows) end
+---@param Path string
+---@param Windows boolean | nil
+function GetPathParent(Path, Windows) end
 
 ---Returns the value of a setting in the specified mod or the current mod if none is specified.
 ---
 ---For MultipleChoice settings, the value returned is 0 based.
 ---
----@param settingName string
----@param modInternalName string | nil
+---@param SettingName string
+---@param ModInternalName string | nil
 ---@return boolean | integer | number | string | nil
-function GetSetting(settingName, modInternalName) end
+function GetSetting(SettingName, ModInternalName) end
 
 ---Returns a table of all setting values in the current mod.
 ---
@@ -143,9 +143,9 @@ function GetSettings() end
 ---
 ---For MultipleChoice settings, the value returned is 1 based.
 ---
----@param modInternalName string
+---@param ModInternalName string
 ---@return table<string, boolean | integer | number | string> | nil
-function GetSettings(modInternalName) end
+function GetSettings(ModInternalName) end
 
 ---Returns a table that is shared by all mods.
 ---
@@ -164,9 +164,9 @@ function IsDemo() end
 
 ---Returns whether a hack is loaded.
 ---
----@param hackInternalName string
+---@param HackInternalName string
 ---@return boolean
-function IsHackLoaded(hackInternalName) end
+function IsHackLoaded(HackInternalName) end
 
 ---Detects whether the -legacyoutput command line argument for the Mod Launcher is in use.
 ---
@@ -175,9 +175,9 @@ function IsLegacyOutput() end
 
 ---Returns whether a mod, mod hack or framework is enabled.
 ---
----@param modInternalName string
+---@param ModInternalName string
 ---@return boolean
-function IsModEnabled(modInternalName) end
+function IsModEnabled(ModInternalName) end
 
 ---Returns whether the -testing command line argument for the Mod Launcher is in use.
 ---
@@ -207,30 +207,30 @@ function Pause() end
 
 ---Reads the file at the given path within the Virtual File System.
 ---
----@param filePath string
+---@param FilePath string
 ---@return string
-function ReadFile(filePath) end
+function ReadFile(FilePath) end
 
 ---Reads part of a file at the given path.
 ---
----@param filePath string
----@param offset integer
----@param length integer
+---@param FilePath string
+---@param Offset integer
+---@param Length integer
 ---@return string
-function ReadFileOffset(filePath, offset, length) end
+function ReadFileOffset(FilePath, Offset, Length) end
 
 ---Redirect the file being requested to a different path within the Virtual File System.
 ---
 ---This should only be called in a Path Handler script.
 ---
----@param filePath string
-function Redirect(filePath) end
+---@param FilePath string
+function Redirect(FilePath) end
 
 ---Returns the given file path or file name without the file extension.
 ---
----@param filePath string
+---@param FilePath string
 ---@return string
-function RemoveFileExtension(filePath) end
+function RemoveFileExtension(FilePath) end
 
 -- TODO: UseCallbacks
 
