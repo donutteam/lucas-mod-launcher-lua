@@ -177,6 +177,8 @@ function ComparePaths(Path1, Path2, IsCaseInsensitive, IsSlashInsensitive) end
 ---@return boolean
 function Confirm(Message) end
 
+-- TODO: Dialog
+
 ---Iterates a directory, calling the provided callback for each entry.
 ---
 ---You can return `false` from the callback to stop the iteration early.
@@ -206,6 +208,26 @@ function Exists(Path, IsFile, IsDirectory) end
 ---@return string
 function FixSlashes(Path, ToWindows, FromWindows) end
 
+-- TODO: GetActiveLevelMission
+
+---Gets the player's current amount of coins.
+---
+---Returns nil if the save manager is not available (when CustomFiles.lua is executing).
+---
+---@return integer | nil
+function GetCoins() end
+
+---Gets the current level.
+---
+---Returns nil if the gameplay manager is not available (when the player is not in the normal game or the bonus game).
+---
+---@return integer | nil
+function GetCurrentLevel() end
+
+-- TODO: GetCurrentMission
+
+-- TODO: GetCurrentSkin
+
 ---Calls the given callback function for each mod that is enabled.
 ---
 ---You can return `false` from the callback to stop the iteration early.
@@ -230,10 +252,46 @@ function GetFileName(Path) end
 ---@return "E" | "F" | "G" |"S"
 function GetGameLanguage() end
 
+-- TODO: GetHighestLevelMission
+
 ---Returns the current version of the Mod Launcher as a string.
 ---
 ---@return string
 function GetLauncherVersion() end
+
+---Gets the number of cars purchased in a level.
+---
+---This includes the bonus mission and street race cars.
+---
+---Returns nil if the save manager is not available (when CustomFiles.lua is executing).
+---
+---@param Level integer The level to check. Integer between 1 and 7 (or CustomStatsTotals Levels, if it is loaded).
+---@return integer | nil
+function GetLevelNumCarsPurchased(Level) end
+
+---Gets the number of gags completed in a level.
+---
+---Returns nil if the save manager is not available (when CustomFiles.lua is executing).
+---
+---@param Level integer The level to check. Integer between 1 and 7 (or CustomStatsTotals Levels, if it is loaded).
+---@return integer | nil
+function GetLevelNumGagsCompleted(Level) end
+
+---Gets the number of skins purchased in a level.
+---
+---Returns nil if the save manager is not available (when CustomFiles.lua is executing).
+---
+---@param Level integer The level to check. Integer between 1 and 7 (or CustomStatsTotals Levels, if it is loaded).
+---@return integer | nil
+function GetLevelNumSkinsPurchased(Level) end
+
+---Gets the number of wasps destroyed in a level.
+---
+---Returns nil if the save manager is not available (when CustomFiles.lua is executing).
+---
+---@param Level integer The level to check. Integer between 1 and 7 (or CustomStatsTotals Levels, if it is loaded).
+---@return integer | nil
+function GetLevelNumWaspsDestroyed(Level) end
 
 ---Returns the InternalName of the current main mod or nil if there is no main mod.
 ---
@@ -314,6 +372,12 @@ function GetShared() end
 ---@return number
 function GetTime() end
 
+---Checks if a cheat is enabled.
+---
+---@param Cheat integer The cheat to check. Recommended to use constants from the global Cheat table.
+---@return boolean
+function IsCheatEnabled(Cheat) end
+
 ---Returns true if the user is playing the Demo version of the game.
 ---
 ---@return boolean
@@ -330,11 +394,74 @@ function IsHackLoaded(HackInternalName) end
 ---@return boolean
 function IsLegacyOutput() end
 
+---Checks if a bonus mission is completed.
+---
+---@param Level integer The level to check. Integer between 1 and 7 (or CustomStatsTotals Levels, if it is loaded).
+---@return boolean
+function IsLevelBonusMissionCompleted(Level) end
+
+---Checks if a collector card has been collected.
+---
+---Returns nil if the save manager is not available (when CustomFiles.lua is executing).
+---
+---@param Level integer The level to check. Integer between 1 and 7 (or CustomStatsTotals Levels, if it is loaded).
+---@param Card integer The card to check. Integer between 1 and 7 (or CustomStatsTotals [LevelX] CollectorCards, if it is loaded).
+---@return boolean
+function IsLevelCardCollected(Level, Card) end
+
+---Checks if a level's FMV has been unlocked.
+---
+---Returns nil if the save manager is not available (when CustomFiles.lua is executing).
+---
+---@param Level integer The level to check. Integer between 1 and 7 (or CustomStatsTotals Levels, if it is loaded).
+---@return boolean | nil
+function IsLevelFMVUnlocked(Level) end
+
+---Checks if a gag has been completed.
+---
+---Returns nil if the save manager is not available (when CustomFiles.lua is executing).
+---
+---@param Level integer The level to check. Integer between 1 and 7 (or CustomStatsTotals Levels, if it is loaded).
+---@param Gag integer The gag to check. Integer between 1 and 32.
+---@return boolean | nil
+function IsLevelGagCompleted(Level, Gag) end
+
+---Checks if a gamble race has been completed.
+---
+---Returns nil if the save manager is not available (when CustomFiles.lua is executing).
+---
+---@param Level integer The level to check. Integer between 1 and 7 (or CustomStatsTotals Levels, if it is loaded).
+---@return boolean | nil
+function IsLevelGambleRaceCompleted(Level) end
+
+---Checks if a mission is completed.
+---
+---@param Level 1
+---@param Mission 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7
+function IsLevelMissionCompleted(Level, Mission) end
+
+---Checks if a mission is completed.
+---
+---@param Level integer The level to check. Integer between 1 and 7 (or CustomStatsTotals Levels, if it is loaded).
+---@param Mission integer The mission to check. Integer between 0/1 and 7/8 (Level 1 and Levels 2-7 respectively) (or CustomStatsTotals [LevelX] StoryMissions, if it is loaded).
+function IsLevelMissionCompleted(Level, Mission) end
+
+---Checks if a street race is completed.
+---
+---@param Level integer The level to check. Integer between 1 and 7 (or CustomStatsTotals Levels, if it is loaded).
+---@param StreetRace integer The mission to check. Integer between 1 and 3 (or CustomStatsTotals [LevelX] StreetRaces, if it is loaded).
+---@return boolean
+function IsLevelStreetRaceCompleted(Level, StreetRace) end
+
 ---Returns whether a mod, mod hack or framework is enabled.
 ---
 ---@param ModInternalName string
 ---@return boolean
 function IsModEnabled(ModInternalName) end
+
+-- TODO: IsPersistentObjectDestroyed
+
+-- TODO: IsRewardUnlocked
 
 ---Returns whether the -testing command line argument for the Mod Launcher is in use.
 ---
@@ -349,6 +476,8 @@ function IsTesting() end
 ---
 ---@return boolean
 function IsWriting() end
+
+-- TODO: LookupString
 
 ---Outputs text or binary data to a virtual file in memory which is then handed off to the game in place of the file it requested.
 ---
