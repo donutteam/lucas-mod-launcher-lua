@@ -1,5 +1,7 @@
 ---@meta
 
+error("Meta files should not be executed.")
+
 ---Shows a message box for debugging purposes with an "OK" button.
 ---
 ---@param Message string
