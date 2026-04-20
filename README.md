@@ -1,12 +1,18 @@
-# Lucas Mod Launcher Lua Definitions
-This repository contains a Lua file of definitions for custom Lua functions built in to [Lucas' Simpsons Hit & Run Mod Launcher](https://modbakery.donutteam.com/releases/view/6).
+# Lucas Mod Launcher Lua
+[Lua Language Server](https://luals.github.io/) definitions for Custom Files Lua Functions in [Lucas' Simpsons Hit & Run Mod Launcher](https://modbakery.donutteam.com/releases/view/6).
 
-## Usage
-This file is designed for use with the [Lua Language Server](https://luals.github.io/).
+# Usage
+## Visual Studio Code
+Install the [Lua extension by Sumneko](https://marketplace.visualstudio.com/items?itemName=sumneko.lua). 
 
-The easiest way to make use of it is by using [Visual Studio Code](https://code.visualstudio.com/) and installing the [Lua Extension by Sumneko](https://marketplace.visualstudio.com/items?itemName=sumneko.lua).
+Once you have the extension installed, place the contents of the `src` folder somewhere in your mod. We recommend `Resources/lib/external/lucas-mod-launcher-lua`. The extension will automatically pick up the file and provide you with autocompletion and documentation for the custom functions.
 
-Once you install the extension, place the Lua file anywhere in your project (we recommend "YourModName/Resources/lib"). The extension will automatically pick up the file and provide you with autocompletion and documentation for the custom functions.
+You should then also configure the extension to use Lua 5.3 in `.vscode/settings.json`:
+```json
+{
+	"Lua.runtime.version": "Lua 5.3",
+}
+```
 
 ## License
-[MIT](https://github.com/donutteam/lucas-mod-launcher-lua/blob/main/LICENSE.md)
+See [LICENSE](https://github.com/donutteam/lucas-mod-launcher-lua/blob/main/LICENSE.md).
